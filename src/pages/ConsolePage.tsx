@@ -377,9 +377,10 @@ export function ConsolePage() {
     const client = clientRef.current;
 
     // Set instructions
+    client.updateSession({ model: 'gpt-4o-mini' });
     client.updateSession({ instructions: instructions });
     // Set transcription, otherwise we don't get user transcriptions back
-    client.updateSession({ input_audio_transcription: { model: 'whisper-1' } });
+    client.updateSession({ input_audio_transcription: { model: 'whisper-1'} });
 
     // Add tools
     client.addTool(
